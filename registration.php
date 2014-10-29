@@ -21,7 +21,7 @@ foreach ($_REQUEST as $key => $value) {
 
 $mg->sendMessage($domain, array('from'    => getenv('ORIGIN_EMAIL'), 
                                 'to'      => getenv('DESTINATION_EMAIL'), 
-                                'subject' => 'New submission to GraceNotes registration form', 
+                                'subject' => getenv('SUBJECT'), 
                                 'text'    => $message ));
 
 header('Location: ' . $redirect);
